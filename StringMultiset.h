@@ -10,6 +10,8 @@ TestClass::FindSubstring( std::string S, multiset T )
 	std::multiset<std::string, int> validationT;
 	std::multimap<std::string, int> currentSubstring;
 	
+	std::multimap<int, std::string> validSubstringsOrdered;
+	
 	int countShortestSubstring = N;
 	
 	for ( int i = 0; i < N; i++ )
@@ -64,12 +66,12 @@ TestClass::FindSubstring( std::string S, multiset T )
 			if ( currentRightIndex - currentLeftIndex < countShortestSubstring )
 			{
 				countShortestSubstring = currentRightIndex - currentLeftIndex;
-				nSs.insert( std::pair<int, std::string>( countShortestSubstring, S.substr( currentLeftIndex, countShortestSubstring + 1 ) ) );
+				validSubstringsOrdered.insert( std::pair<int, std::string>( countShortestSubstring, S.substr( currentLeftIndex, countShortestSubstring + 1 ) ) );
 			}
 		}
 	}
 	
 	// Substring found only if we have a full set, otherwise there is nothing:
-	if ( validationT.size() == T.size() ) return nSs.begin()->second;
+	if ( validationT.size() == T.size() ) return validSubstringsOrdered.begin()->second;
 	else return "";
 }
