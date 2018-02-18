@@ -9,10 +9,8 @@ TestClass::FindSubstring( std::string S, multiset T )
 	int iMax;
 	std::multiset<std::string, int> Tc;
 	std::multimap<std::string, int> idxTc;
-	std::list<int> idxMaxList, idxMinList, idxN;
 	
 	int nMinSs = N;
-	std::map<int, std::string> mSs;
 	
 	for ( int i = 0; i < N; i++ )
 	{
@@ -45,7 +43,8 @@ TestClass::FindSubstring( std::string S, multiset T )
 			}
 			
 			// Insert this to the copy:
-			Tc.insert( S[i] );
+			if ( Tc.count( S[i] ) < T.count( S[i] ))
+				Tc.insert( S[i] );
 		}
 		else
 		{
