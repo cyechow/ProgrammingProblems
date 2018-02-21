@@ -48,5 +48,12 @@ public class TestClass
 	public bool CheckPermutation(string A, string B)
 	{
 		//  Check if one string is a permutation of the other.
+		
+		// Error check (empties, nulls)
+		
+		// A permutation is defined by all characters of one string is within the other.
+		// Order does not matter.
+		
+		
 	}
 }
