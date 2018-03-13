@@ -45,7 +45,7 @@ public class TestClass
 		return true;
 	}
 
-	public bool CheckPermutation(string A, string B)
+	public bool CheckPermutation(String A, String B)
 	{
 		//  Check if one string is a permutation of the other.
 		
@@ -54,6 +54,12 @@ public class TestClass
 		// A permutation is defined by all characters of one string is within the other.
 		// Order does not matter.
 		
+		// At the very least, must traverse through A and B once.
+		
+		// Run through A, check against every character in B. If current character exists, mark this character exclude from B in the next character check.
+		// If either A or B has all characters marked, then one is a permutation of the other.
+		
+		// We can sort both strings, find the first occurrence of A in B and start comparison at that index.
 		
 	}
 }
