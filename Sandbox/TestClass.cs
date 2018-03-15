@@ -60,6 +60,7 @@ public class TestClass
 		// If either A or B has all characters marked, then one is a permutation of the other.
 		
 		// We can sort both strings, find the first occurrence of A in B and start comparison at that index.
-		
+		String sortedA = String.Concat( A.OrderBy( c => c ) );
+		String sortedB = String.Concat( B.OrderBy( c => c ) );
 	}
 }
